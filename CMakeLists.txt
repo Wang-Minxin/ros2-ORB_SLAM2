@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 3.5)
 project(ros2_orbslam)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules/")
-
+file(GLOB_RECURSE OLD_OPENCV "/usr/lib/x86_64-linux-gnu/libopencv*")
+list(REMOVE_ITEM catkin_LIBRARIES ${OLD_OPENCV})
 # Default to C++14
 if(NOT CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_STANDARD 14)
